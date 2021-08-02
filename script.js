@@ -1,37 +1,19 @@
-function sayHello() {
-    console.log("hello How are you", "I am good");
-}
+var array = ["tiger", "lion", "monkey", "ram", "Shayam"];
+console.log(array);
 
-sayHello();
+array[0];             //Access the element at 0 index
+array.push("Hi");    //Add Hi to the last
+console.log(array);
+array.splice(0,1);   //Removes the element at 0 ndex and removes only 1 element
+console.log(array);
+array.sort();       //sorts the list in acessending
+console.log(array);
+var new1 = array.concat(["Girl","boy"]);   //cncat two or more lists
+console.log(new1);
 
-
-var Byebye = function() {
-    console.log("bye bye guys");
-}
-
-Byebye();
-
-function sing(song){
-    console.log(song);
-}
-
-sing("Laa De Daaa");
-sing("haaaa maaaa");
-
-function multiply(a,b){
-    return a*b;
-}
-
-multiply(5,6);
-
-function checkDriverAge(){
-    var age = prompt("What is your age?");
-
-    if (Number(age) < 18) {
-	    alert("Sorry, you are too yound to drive this car. Powering off");
-    } else if (Number(age) > 18) {
-	    alert("Powering On. Enjoy the ride!");
-    } else if (Number(age) === 18) {
-	    alert("Congratulations on your first year of driving. Enjoy the ride!");
-    }
-}
+var obj = {
+	name: "Jonshon",
+	hobby: "Cricket",
+	age: 34,
+	isMarried: false,
+};
