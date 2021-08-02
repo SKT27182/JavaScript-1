@@ -3,3 +3,10 @@ function sayHello() {
 }
 
 sayHello();
+
+
+var Byebye = function() {
+    console.log("bye bye guys");
+}
+
+Byebye();
