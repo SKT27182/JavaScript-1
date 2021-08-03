@@ -1,19 +1,34 @@
-var array = ["tiger", "lion", "monkey", "ram", "Shayam"];
-console.log(array);
+var database = [
+	{
+		username: "skt",
+		password: "tiwari"
+	}
+];
 
-array[0];             //Access the element at 0 index
-array.push("Hi");    //Add Hi to the last
-console.log(array);
-array.splice(0,1);   //Removes the element at 0 ndex and removes only 1 element
-console.log(array);
-array.sort();       //sorts the list in acessending
-console.log(array);
-var new1 = array.concat(["Girl","boy"]);   //cncat two or more lists
-console.log(new1);
+var newsfeed = [
+	{
+		username: "Bobby",
+		timeline: "So tired from all that learning!"
+	},
+	{
+		username: "Sally",
+		timeline: "Javascript is sooooo cool!"
+	},
+	{
+		username: "Mitch",
+		timeline: "Javascript is preeetyy cool!"
+	}
+];
 
-var obj = {
-	name: "Jonshon",
-	hobby: "Cricket",
-	age: 34,
-	isMarried: false,
-};
+var userNamePrompt = prompt("What's your username ?");
+var passwordPrompt = prompt("What's your password?");
+
+function signIn(user, pass) {
+	if(user === database[0].username && pass === database[0].password){
+		console.log(newsfeed);
+	}else{
+		alert("Wrong Credentials")
+	}
+}
+
+signIn(userNamePrompt, passwordPrompt);
