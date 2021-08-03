@@ -1,33 +1,52 @@
-var count =10;
-do {
-	console.log(count);
-	count--;
-}while(count >0);
+var database = [
+	{
+		username: "skt",
+		password: "tiwari1"
+	},
+	{
+		username: "roli",
+		password: "tiwari2"
+	},
+	{
+		username: "priti",
+		password: "tiwari3"
+	}
+];
 
-var todos1 = [
-	"clean room",
-	"brush teeth",
-	"hair wash",
-	"walking",
-	"singing"
-]
+var newsfeed = [
+	{
+		username: "Bobby",
+		timeline: "So tired from all that learning!"
+	},
+	{
+		username: "Sally",
+		timeline: "Javascript is sooooo cool!"
+	},
+	{
+		username: "Mitch",
+		timeline: "Javascript is preeetyy cool!"
+	}
+];
 
-var todos2 = [
-	"clean room",
-	"brush teeth",
-	"hair wash",
-	"walking",
-	"singing"
-]
+var userNamePrompt = prompt("What's your username ?");
+var passwordPrompt = prompt("What's your password?");
 
-var toods1Lenght = todos1.length;
-for(var i =0; i< toods1Lenght; i++){
-	console.log(i);
+function isUserValid(username, password){
+	for(var i=0; i< database.length; i++){
+		if(username === database[i].username && password === database[i].password){
+			return true;
+		}
+	}
+	return false;
 }
 
-function logTodo(todo, i) {
-	console.log(todo,i);
+function signIn(user, pass) {
+	if(isUserValid(user, pass)){
+		console.log(newsfeed);
+	}else{
+		alert("wrong");
+	}
+		
 }
 
-todos1.forEach(logTodo);
-todos2.forEach(logTodo);
+signIn(userNamePrompt, passwordPrompt);
