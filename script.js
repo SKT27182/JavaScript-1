@@ -13,11 +13,16 @@ function getLength() {
 function createListElement() {
 	var li = document.createElement("li");
 	var delbtn = document.createElement("button");
+	var span = document.createElement("span");
 	ul.appendChild(li);
-	li.appendChild(document.createTextNode(input.value + " "));
+	span.innerText = input.value;
+	li.appendChild(span);
 	li.appendChild(delbtn);
-	delbtn.appendChild(document.createTextNode("Delete"))
-	ul.appendChild(li);
+	delbtn.onclick = function(){
+		const parentElement =this.parentNode;
+		this.parentNode.remove();
+	}
+	delbtn.appendChild(document.createTextNode("Delete"));
 	input.value = "";
 }
 
@@ -41,11 +46,10 @@ input.addEventListener("keypress", addListAfterEnter);
 
 var delbtns = document.getElementsByTagName("button");
 
-function removeParentElement(evt) {
-	console.log(evt.path[0]);
-	var bt =  evt.path[0];
-	
+function removeParentElement(btn) {
+	btn.parentNode.remove();	
+}
 
-for (var i = 0; i < delbtns.length; i++) {
-	delbtns[i].addEventListener("click", removeParentElement);
+for (let i = 0; i < delbtns.length; i++) {
+	delbtns[i].addEventListener("click", ()=>{removeParentElement(delbtns[i])});
 }
